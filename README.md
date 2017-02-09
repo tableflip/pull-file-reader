@@ -2,7 +2,7 @@
 
 Given an HTML5 File object (from e.g. HTML5 drag and drops), turn it into a pull stream source.
 
-Heavily based on [filereader-stream](https://github.com/maxogden/filereader-stream) by @maxogden.
+Heavily based on [filereader-stream](https://github.com/maxogden/filereader-stream) by [@maxogden](https://github.com/maxogden).
 
 # install
 
