@@ -1,10 +1,12 @@
-# filereader-pull-stream
+# filereader-pull-stream [![dependencies Status](https://david-dm.org/tableflip/filereader-pull-stream/status.svg)](https://david-dm.org/tableflip/filereader-pull-stream)
 
 Given an HTML5 File object (from e.g. HTML5 drag and drops), turn it into a pull stream source.
 
+Heavily based on [filereader-stream](https://github.com/maxogden/filereader-stream) by @maxogden.
+
 # install
 
-Use it with npm & [browserify](/substack/node-browserify)
+Use it with npm & [browserify](https://github.com/substack/node-browserify)
 
 ```bash
 npm install filereader-pull-stream
@@ -52,3 +54,7 @@ npm test
 ```
 
 then open your browser to the address provided, open your JS console, and drag and drop files onto the page until the test suite passes/fails
+
+---
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
