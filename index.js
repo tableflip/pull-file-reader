@@ -6,12 +6,13 @@ module.exports = function (file, opts) {
 
   var offset = opts.offset || 0
   var chunkSize = opts.chunkSize || 1024 * 1024 // default 1MB chunk has tolerable perf on large files
-  var fileReader = new FileReader(file)
 
   return function (end, cb) {
     if (end) return cb(end)
     // If finished reading then stop
     if (offset >= file.size) return cb(true)
+
+    var fileReader = new FileReader(file)
 
     fileReader.onloadend = function loaded (event) {
       var data = event.target.result
