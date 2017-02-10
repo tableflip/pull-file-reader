@@ -1,4 +1,4 @@
-# filereader-pull-stream [![dependencies Status](https://david-dm.org/tableflip/filereader-pull-stream/status.svg)](https://david-dm.org/tableflip/filereader-pull-stream)
+# pull-file-reader [![dependencies Status](https://david-dm.org/tableflip/pull-file-reader/status.svg)](https://david-dm.org/tableflip/pull-file-reader)
 
 Given an HTML5 File object (from e.g. HTML5 drag and drops), turn it into a pull stream source.
 
@@ -9,7 +9,7 @@ Heavily based on [filereader-stream](https://github.com/maxogden/filereader-stre
 Use it with npm & [browserify](https://github.com/substack/node-browserify)
 
 ```bash
-npm install filereader-pull-stream
+npm install pull-file-reader
 ```
 
 # example
@@ -17,12 +17,12 @@ npm install filereader-pull-stream
 ```js
 var drop = require('drag-and-drop-files')
 var pull = require('pull-stream')
-var fileReaderPullStream = require('filereader-pull-stream')
+var fileReader = require('pull-file-reader')
 
 drop(document.body, function (files) {
   var first = files[0]
   pull(
-    fileReaderStream(first),
+    fileReader(first),
     pull.collect(function (err, buffs) {
       var contents = Buffer.concat(buffs)
       // contents is the contents of the entire file
@@ -35,11 +35,11 @@ drop(document.body, function (files) {
 # usage
 
 ```js
-var fileReaderPullStream = require('filereader-pull-stream')
-var source = fileReaderPullStream(file, [options])
+var fileReader = require('pull-file-reader')
+var source = fileReader(file, [options])
 ```
 
-`fileReaderPullStream` is a [pull stream](https://github.com/pull-stream/pull-stream) [source](https://github.com/pull-stream/pull-stream#source-aka-readable).
+`fileReader` is a [pull stream](https://github.com/pull-stream/pull-stream) [source](https://github.com/pull-stream/pull-stream#source-aka-readable).
 
 `options`:
 

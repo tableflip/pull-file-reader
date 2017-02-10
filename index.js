@@ -1,14 +1,14 @@
 /* global FileReader */
 var toBuffer = require('typedarray-to-buffer')
 
-function fileReader (file, opts) {
+module.exports = function (file, opts) {
   opts = opts || {}
 
   var offset = opts.offset || 0
   var chunkSize = opts.chunkSize || 1024 * 1024 // default 1MB chunk has tolerable perf on large files
   var fileReader = new FileReader(file)
 
-  function source (end, cb) {
+  return function (end, cb) {
     if (end) return cb(end)
     // If finished reading then stop
     if (offset >= file.size) return cb(true)
@@ -32,8 +32,4 @@ function fileReader (file, opts) {
     fileReader.readAsArrayBuffer(slice)
     offset = endIndex
   }
-
-  return source
 }
-
-module.exports = fileReader

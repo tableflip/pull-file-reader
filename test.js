@@ -1,7 +1,7 @@
 var test = require('tape')
 var drop = require('drag-and-drop-files')
 var pull = require('pull-stream')
-var frps = require('./')
+var fileReader = require('./')
 
 var LEN = 1024 * 512
 
@@ -10,7 +10,7 @@ drop(document.body, function (files) {
     var first = files[0]
 
     pull(
-      frps(first, { chunkSize: LEN }),
+      fileReader(first, { chunkSize: LEN }),
       pull.through(function (ch) {
         t.ok(ch.length <= LEN, 'length is <= ' + LEN)
       }),
