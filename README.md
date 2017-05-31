@@ -55,6 +55,8 @@ npm test
 
 then open your browser to the address provided, open your JS console, and drag and drop files onto the page until the test suite passes/fails
 
----
+----
+
+A [(╯°□°）╯︵TABLEFLIP](https://tableflip.io) side project.
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
